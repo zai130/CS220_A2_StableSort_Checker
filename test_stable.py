@@ -19,6 +19,9 @@ def stable_sort(unsorted_list):
     # 'unsorted_list' to the name of what you call your list of integers
     # If you want to use a specific list instead of a randomly generated one you can call convert_list() on your list of integers
     # And pass it into this function, you need to use convert_list, because it will convert the numbers to my IndexedInteger class
+    # You can either return your new sorted list, or don't return anything if you are sorting in place
+
+
 
 
 
@@ -33,7 +36,9 @@ def check_stable(l):
 l = create_list(100)
 
 print('BEFORE: ', l)
-stable_sort(l)
+new_l = stable_sort(l) # We don't have to do it in place
+if new_l:
+    l = new_l # If the function returns something, set the list to that
 print('AFTER: ', l)
 print('EXPECTED:', unstable_sort(l))
 print('Stable?: ', check_stable(l), 'THIS OUTPUT IS NOT A SUFFICENT ANSWER FOR THIS PART OF THE QUESTION, ONLY TO BE USED AS A BASIC CHECK DONT USE IT')
