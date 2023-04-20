@@ -13,13 +13,31 @@ def unstable_sort(l):
     return sorted(l_copy)
 
 
-def stable_sort(unsorted_list):
-    pass
+def stable_sort(a_list):
+    
     # Put your stable sort algorithm here, you don't need to modify your code at all, just change the parameter value
     # 'unsorted_list' to the name of what you call your list of integers
     # If you want to use a specific list instead of a randomly generated one you can call convert_list() on your list of integers
     # And pass it into this function, you need to use convert_list, because it will convert the numbers to my IndexedInteger class
     # You can either return your new sorted list, or don't return anything if you are sorting in place
+    a_list = convert_list([3,2,1,1])
+    n = len(a_list)
+    val_idx = []
+    
+    for i in range(n):
+        val_idx.append((a_list[i], i))
+
+        
+    print(val_idx)
+
+    sorted_val_idx = unstablesort(val_idx)
+    print(sorted_val_idx)
+
+    sorted_lis = []
+    for i in range(n):
+        sorted_lis.append(sorted_val_idx[i][0])
+
+    return sorted_lis
 
 
 
